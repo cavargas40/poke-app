@@ -7,7 +7,7 @@ import { PokeapiService } from 'src/app/services/pokeapi.service';
   styleUrls: ['./card-deck.component.scss']
 })
 export class CardDeckComponent implements OnInit {
-  private pokemons: Array<any> = [];
+  public pokemons: Array<any> = [];
 
   constructor(private pokeApiService: PokeapiService) { }
 
