@@ -2,13 +2,10 @@
     <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
         (page)="pageEvent = paginate($event)">
     </mat-paginator>
-    <!-- <md-paginator [length]="paginatorSize" [pageSize]="numberOfProductsDisplayedInPage" [pageSizeOptions]="[12, 24]"
-            (page)="updateProductsDisplayedInPage($event)">
-        </md-paginator> -->
 </div>
 
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-    <div [ngStyle]="{'width':'300' + 'px'}" *ngFor="let pokemon of pokemons" class="card-item">
+    <div *ngFor="let pokemon of pokemons" class="card-item card">
         <app-poke-card [pokemon]="pokemon"></app-poke-card>
     </div>
 </div>
