@@ -9,10 +9,17 @@ export class PokeCardComponent implements OnInit {
 
   @Input() pokemon: any;
 
+  public imageLoading: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
-    
+  }
+
+  onImageLoad(event) {
+    setTimeout(() => {
+      this.imageLoading = true;
+    }, 0);
   }
 
 }
