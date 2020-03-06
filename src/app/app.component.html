@@ -1,8 +1,6 @@
 <div class="mat-app-background basic-container">
   <mat-toolbar color="primary">Poke App</mat-toolbar>
   <div>
-    <ng-container *ngFor="let pokemon of pokemons">
-        <app-poke-card [pokemon]="pokemon"></app-poke-card>
-    </ng-container>
+      <app-card-deck></app-card-deck>
   </div>
 </div>

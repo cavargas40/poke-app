@@ -16,11 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { PokeCardComponent } from './components/poke-card/poke-card.component';
 import { PokeapiService } from './services/pokeapi.service';
+import { CardDeckComponent } from './components/card-deck/card-deck.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokeCardComponent
+    PokeCardComponent,
+    CardDeckComponent
   ],
   imports: [
     BrowserModule,

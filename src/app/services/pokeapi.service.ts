@@ -5,13 +5,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PokeapiService {
-
-  baseUrl = 'http://pokeapi.co/api/v2/pokemon/'; 
+  baseUrl = 'http://pokeapi.co/api/v2/pokemon/';
 
   constructor(private http: HttpClient) { }
 
-  getAllPokemon(){
-    return this.http.get<any>(`${this.baseUrl}?limit=800`);
+  getAllPokemon(limit = 20, offset = 20) {
+    return this.http.get<any>(`${this.baseUrl}?limit=${limit}&offset=${offset}`);
   }
-
 }
