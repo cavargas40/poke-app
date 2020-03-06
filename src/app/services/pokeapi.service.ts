@@ -12,4 +12,8 @@ export class PokeapiService {
   getAllPokemon(limit = 20, offset = 20) {
     return this.http.get<any>(`${this.baseUrl}?limit=${limit}&offset=${offset}`);
   }
+
+  getPokemonById(id: number) {
+    return this.http.get<any>(`${this.baseUrl}/${id}`);
+  }
 }
