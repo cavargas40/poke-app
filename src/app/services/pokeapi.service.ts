@@ -22,6 +22,7 @@ export class PokeapiService {
   }
 
   getPokemonInfo(url: string) {
+    const operator = 10;
     return this.http.get<any>(url).pipe(
       map((res) => {
         const abilities = res.abilities
@@ -32,8 +33,8 @@ export class PokeapiService {
           .join(', ');
 
         res['formatted'] = {
-          weight: `${res.weight / 10} kg`,
-          height: `${res.height * 10} cm`,
+          weight: `${res.weight / operator} kg`,
+          height: `${res.height * operator} cm`,
           abilities,
           types,
         };

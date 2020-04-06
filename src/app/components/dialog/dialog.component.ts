@@ -35,4 +35,5 @@ export class DialogComponent implements OnInit {
       this.isLoading = false;
     });
   }
+
 }
