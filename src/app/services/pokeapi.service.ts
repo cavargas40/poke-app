@@ -7,7 +7,7 @@ import { Utils } from '../utils/utils';
   providedIn: 'root',
 })
 export class PokeapiService {
-  baseUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
   constructor(private http: HttpClient) {}
 
