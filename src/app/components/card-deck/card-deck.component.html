@@ -4,7 +4,7 @@
     </mat-paginator>
 </div>
 
-<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+<div class="container">
     <div *ngFor="let pokemon of pokemons" class="card-item card">
         <app-poke-card [pokemon]="pokemon"></app-poke-card>
     </div>

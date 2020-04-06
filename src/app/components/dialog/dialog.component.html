@@ -1,0 +1,40 @@
+<div class="pokemon">
+  <div class="pokemon__picture">
+    <img
+      [hidden]="!imageLoading"
+      mat-card-image
+      src="https://pokeres.bastionbot.org/images/pokemon/{{ data?.id }}.png"
+      alt="{{ data?.name }}"
+      (load)="onImageLoad($event)"
+    />
+  </div>
+  <div class="pokemon__info" *ngIf="!isLoading">
+    <div class="pokemon__name">
+      <h1 mat-dialog-title>{{ data.name | titlecase }}</h1>
+    </div>
+    <div class="pokemon__weight">
+      <span>Weight</span>
+      <span>{{ pokemon?.formatted?.weight }}</span>
+    </div>
+    <div class="pokemon__height">
+      <span>Height</span>
+      <span>{{ pokemon?.formatted?.height }}</span>
+    </div>
+
+    <div class="pokemon__abilities">
+      <span>Abilities</span>
+      <p>
+        <span>{{ pokemon?.formatted?.abilities }}</span>
+      </p>
+    </div>
+    <div class="pokemon__types">
+      <span>Type</span>
+      <p>
+        <span>{{ pokemon?.formatted?.types }}</span>
+      </p>
+    </div>
+  </div>
+  <div class="pokemon__loader" *ngIf="isLoading">
+    <app-spinner></app-spinner>
+  </div>
+</div>

@@ -1,15 +1,24 @@
 <mat-card class="card">
-    <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{ pokemon?.name | titlecase }}</mat-card-title>
-        <mat-card-subtitle>Pokemon</mat-card-subtitle>
-    </mat-card-header>
-    <div style="text-align: center;">
-        <app-spinner *ngIf="!imageLoading"></app-spinner>
-    </div>
-    <img [hidden]="!imageLoading" mat-card-image src="https://pokeres.bastionbot.org/images/pokemon/{{pokemon.id}}.png"
-        alt="{{ pokemon?.name }}" (load)="onImageLoad($event)">
-    <mat-card-actions>
-        <button mat-button>DETAILS</button>
-    </mat-card-actions>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title class="pointer" (click)="openDialog()">{{
+      pokemon?.name | titlecase
+    }}</mat-card-title>
+    <mat-card-subtitle>Pokemon</mat-card-subtitle>
+  </mat-card-header>
+  <div style="text-align: center;">
+    <app-spinner *ngIf="!imageLoading"></app-spinner>
+  </div>
+  <img
+    [hidden]="!imageLoading"
+    mat-card-image
+    class="pointer"
+    src="https://pokeres.bastionbot.org/images/pokemon/{{ pokemon.id }}.png"
+    alt="{{ pokemon?.name }}"
+    (load)="onImageLoad($event)"
+    (click)="openDialog()"
+  />
+  <mat-card-actions>
+    <button mat-button (click)="openDialog()">DETAILS</button>
+  </mat-card-actions>
 </mat-card>
